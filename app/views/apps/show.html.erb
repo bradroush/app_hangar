@@ -1,0 +1,31 @@
+<div class="workbench">
+    <div class="leftcolumn">
+        <div class="screen-list-container">
+	      <h2>Screens</h2>
+	      <% @app.screens.each do |screen| %>
+	        <%= link_to screen, remote: true do %>
+	          <div class="item" data-screen-id="<%=screen.id%>"> <%= screen.name %> </div>
+	        <% end %>
+	      <% end %>
+        </div>
+        <div class="view-list-container">
+            <div class="box orange" data-pointer="box1">View</div>
+            <div class="box blue" data-pointer="box2">Table</div>
+            <div class="box pink" data-pointer="box3"></div>
+            <div class="box yellow" data-pointer="box4"></div>
+            <div class="box green" data-pointer="box5"></div>
+        </div>
+    </div>
+    <div class="midcolumn">
+        <div id="phone-container">
+            <div id="phone"></div>
+        </div>
+    </div>
+    <div class="rightcolumn">
+        <p>Properties</p>
+        <div id="click-position">Click</div>
+        <div id="a-position">Absolute</div>
+        <div id="r-position">Relative</div>
+    </div>
+</div>
+<div id="dragger"></div>

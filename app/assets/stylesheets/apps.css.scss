@@ -1,0 +1,133 @@
+// Place all the styles related to the Apps controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+    /*min-height: 100% !important;*/
+    height: 100%;
+}
+
+a, a:hover, a:visited, a:active {
+	color:inherit;
+	text-decoration:none;
+}
+
+.workbench {
+    background: red;
+    min-width: 800px;
+    width: auto;
+    min-height: 520px;
+    height:100%;
+}
+
+/*Left Column Start*/
+
+.leftcolumn {
+    height: 100%;
+    width: 25%;
+    background: #E8E8E8;
+    float:left;
+    display:inline;
+}
+.screen-list-container {
+    height: 50%;
+    width: 100%;
+    overflow-y: scroll;
+    background: #D8D8D8;
+    display:block;
+    .item {
+    	padding:5px;
+    	cursor:pointer;
+    	color:#686868;
+    }
+    .item_hover {
+    	background:#C0C0C0;
+    }
+    .item_selected {
+    	background:#B0B0B0;
+    }
+}
+.view-list-container {
+    height: 50%;
+    width: 100%;
+    overflow-y: scroll;
+    display:block;
+    .box {
+	    width:80px;
+	    height:80px;
+	    margin:10px 10px 10px 10px;
+	    border-radius: 5px;
+	    float:left;
+	    display:block;
+	    cursor:pointer;
+	}
+}
+
+/*Mid Pane Start*/
+
+.midcolumn {
+    height: 100%;
+    width:50%;
+    background: #4682B4;
+    float:left;
+}
+#phone-container {
+    width:320px;
+    height:480px;
+    margin:20px auto;
+    background: gray;
+}
+#phone {
+    width:320px;
+    height:480px;
+    /* margin:20px auto auto 20px; */
+    background: black;
+    position: absolute;
+}
+#phone .box {
+    width:80px;
+    height:80px;
+    border-radius: 5px;
+    float:left;
+    /* display:inline; */
+    position: absolute;
+    /* position: relative; */
+}
+
+/*Right Pane Start*/
+
+.rightcolumn {
+    height: 100%;
+    width: 25%;
+    background: #E8E8E8;
+    float:left;
+    display:inline;
+}
+
+
+.orange {
+    background-color: orange;
+}
+.blue {
+    background-color: blue;
+}
+.pink {
+    background-color: pink;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: green;
+}
+#dragger {
+    width:80px;
+    height:80px;
+    border-radius: 5px;
+    border-style:solid;
+    border-width:3px;
+    border-color:green;
+    position:absolute;
+    display:none;
+    z-index:100;
+}
