@@ -9,11 +9,8 @@
 	      <% end %>
         </div>
         <div class="view-list-container">
-            <div class="box orange" data-pointer="box1">View</div>
-            <div class="box blue" data-pointer="box2">Table</div>
-            <div class="box pink" data-pointer="box3"></div>
-            <div class="box yellow" data-pointer="box4"></div>
-            <div class="box green" data-pointer="box5"></div>
+            <div class="box" data-pointer="view">View</div>
+            <div class="box" data-pointer="table">Table</div>
         </div>
     </div>
     <div class="midcolumn">
@@ -29,3 +26,22 @@
     </div>
 </div>
 <div id="dragger"></div>
+
+<%= javascript_tag do %>
+
+  console.log("First Screen Views:"+<%= @app.screens.first.views.count %>);
+  
+  <% @app.screens.first.views.each do |view| %>
+
+      var $newDiv = $("<div/>") // creates a div element
+        .addClass("box orange")
+        .css({
+            "left": 10,
+            "top": 10,
+            "width": 80,
+            "height": 80,
+        });
+
+    $("#phone").append($newDiv);
+  <% end %>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130913035039) do
+ActiveRecord::Schema.define(version: 20130913063919) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -27,5 +27,18 @@ ActiveRecord::Schema.define(version: 20130913035039) do
   end
 
   add_index "screens", ["app_id"], name: "index_screens_on_app_id"
+
+  create_table "views", force: true do |t|
+    t.string   "background_color"
+    t.integer  "origin_x"
+    t.integer  "origin_y"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "screen_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "views", ["screen_id"], name: "index_views_on_screen_id"
 
 end

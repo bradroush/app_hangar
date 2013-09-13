@@ -56,7 +56,7 @@ a, a:hover, a:visited, a:active {
 	    width:80px;
 	    height:80px;
 	    margin:10px 10px 10px 10px;
-	    border-radius: 5px;
+	    /*border-radius: 5px;*/
 	    float:left;
 	    display:block;
 	    cursor:pointer;
@@ -87,7 +87,7 @@ a, a:hover, a:visited, a:active {
 #phone .box {
     width:80px;
     height:80px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     float:left;
     /* display:inline; */
     position: absolute;
@@ -104,26 +104,14 @@ a, a:hover, a:visited, a:active {
     display:inline;
 }
 
+.box {
+	background-color: white;
+}
 
-.orange {
-    background-color: orange;
-}
-.blue {
-    background-color: blue;
-}
-.pink {
-    background-color: pink;
-}
-.yellow {
-    background-color: yellow;
-}
-.green {
-    background-color: green;
-}
 #dragger {
     width:80px;
     height:80px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     border-style:solid;
     border-width:3px;
     border-color:green;

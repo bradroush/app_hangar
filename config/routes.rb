@@ -1,5 +1,7 @@
 AppHangar::Application.routes.draw do
-  
+    
+  resources :views
+
   resources :screens
 
   resources :apps
