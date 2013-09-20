@@ -34,12 +34,13 @@
   <% @app.screens.first.views.each do |view| %>
 
       var $newDiv = $("<div/>") // creates a div element
-        .addClass("box orange")
+        .addClass("box")
+        .data("id", <%=view.id%>)
         .css({
-            "left": 10,
-            "top": 10,
-            "width": 80,
-            "height": 80,
+            "left": 	<%=view.origin_x%>,
+            "top": 		<%=view.origin_y%>,
+            "width": 	<%=view.width%>,
+            "height": 	<%=view.height%>,
         });
 
     $("#phone").append($newDiv);

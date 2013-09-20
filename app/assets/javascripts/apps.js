@@ -25,7 +25,7 @@ $(document).ready(function() {
     // New screen selection
     $('.screen-list-container .item').click( function(){ 
         $selectedScreenId = $(this).data('screen-id');
-        console.log("New Screen:"+$selectedScreenId);
+        console.log("Clicked Screen:"+$selectedScreenId);
         $selectedScreenListItem.toggleClass('item_selected'); 
         $(this).toggleClass('item_selected'); 
         $selectedScreenListItem = $(this);
@@ -124,7 +124,13 @@ function updateDrag(event) {
 
 function stopDrag(event) {
     
-    if ($selectedResize != null) $selectedResize = null;
+    // Resizing a view
+    if ($selectedResize != null) {
+    	// console.log($selectedResize.width()+" "+$selectedResize.height());
+    	var $properties = {width:$selectedResize.width(), height:$selectedResize.height()};
+    	updateView($selectedResize.data("id"),$properties)
+    	$selectedResize = null;
+    }
     
     // Do nothing if nothing is being dragged
     if ($selectedDrag === null) return;
@@ -133,15 +139,9 @@ function stopDrag(event) {
     if ($relX >= 0 && $relY >= 0) {
 
         // Create correct element        
-        var className = "";
-        if ($dragger.data("pointer") == "box1") className = "orange";
-        else if ($dragger.data("pointer") == "box2") className = "blue";
-        else if ($dragger.data("pointer") == "box3") className = "pink";
-        else if ($dragger.data("pointer") == "box4") className = "yellow";
-        else if ($dragger.data("pointer") == "box5") className = "green";
         var $newDiv = $("<div/>") // creates a div element
         //.attr("class", "box orange")  // adds the class
-            .addClass("box " + className)
+            .addClass("box")
             .data("pointer", $dragger.data("pointer"))
             // .data("id", 10)
             .css({
@@ -154,7 +154,7 @@ function stopDrag(event) {
         // Add element to phone  
         $("#phone").append($newDiv);
 
-        var $properties = {screen_id:1, background_color:"White",
+        var $properties = {screen_id:$selectedScreenId, background_color:"White",
         					origin_x:$relX, origin_y:$relY,
         					width:$dragger.width(), height:$dragger.height()};
 

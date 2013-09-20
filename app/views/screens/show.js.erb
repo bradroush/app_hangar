@@ -1,0 +1,18 @@
+console.log("Refreshing views for Screen: "+<%=@screen.id%>);
+
+$("#phone").empty();
+
+<% @screen.views.each do |view| %>
+
+  var $newDiv = $("<div/>") // creates a div element
+    .addClass("box")
+    .data("id", <%=view.id%>)
+    .css({
+        "left": 	<%=view.origin_x%>,
+        "top": 		<%=view.origin_y%>,
+        "width": 	<%=view.width%>,
+        "height": 	<%=view.height%>,
+    });
+
+$("#phone").append($newDiv);
+<% end %>
