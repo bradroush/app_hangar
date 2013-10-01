@@ -35,6 +35,13 @@ a, a:hover, a:visited, a:active {
     overflow-y: scroll;
     background: #D8D8D8;
     display:block;
+    .header-bar {
+    	padding:5px;
+    	background:#C0C0C0;
+    	.add-button {
+    		float: right;
+    	}
+    }
     .item {
     	padding:5px;
     	cursor:pointer;

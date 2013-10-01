@@ -1,7 +1,12 @@
 <div class="workbench">
     <div class="leftcolumn">
         <div class="screen-list-container">
-	      <h2>Screens</h2>
+          <div class="header-bar">
+          	Screens
+          	<%= link_to new_screen_path, remote: true do %>
+	          <div class="add-button">Add</div>
+	        <% end %>
+          </div>
 	      <% @app.screens.each do |screen| %>
 	        <%= link_to screen, remote: true do %>
 	          <div class="item" data-screen-id="<%=screen.id%>"> <%= screen.name %> </div>
